@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        
+     //Serie Fibonacci
+       
+        let cuantos= 10 //Ingrese la cantidad de números, el número ingresado debe ser entero y mayor que cero
+        if (Number.isInteger(cuantos) && cuantos>0){
+            let arrayFibonacci=
+            serieFibonacci(cuantos);
+            mostrarArray(arrayFibonacci)
+        }else
+                console.log ("El número no es entero o mayor que cero")            
+           
+        function serieFibonacci(cuantos){
+           let fibonacci = [0,1];
+            if(cuantos<=1){
+                return fibonacci;
+            }
+            for (let i=2; i<=cuantos; i++) {
+                fibonacci[i]=fibonacci[i-1] + fibonacci[i-2];
+            }
+            return fibonacci;           
+        }
+
+        function mostrarArray(array){
+            for (let i=0; i<array.length; i++){
+                console.log (array[i])
+            }
+        }
+    
+    // Método de la burbuja - Ordenar de forma ascendente
+
+    let numerosIniciales = ["Hola", 200, null, 0, 15, 16, Object, 1.1, 1, -3, -100, "Arreglo"] //Ingresar el valor del arreglo
+    
+    console.log("Se ha ingresado: " + numerosIniciales);
+  
+    let numero = numerosIniciales.filter(item=> typeof item==='number');
+    let numerosOrdenados = ordenar(numero);
+    console.log("Este es el orden de forma ascendente: " + numerosOrdenados);
+    console.log("La longitud del arreglo final es: "+numerosOrdenados.length);         
+
+    function ordenar (numerosIniciales) {
+        let n = numerosIniciales.length;
+        let intercambio;
+
+        do {
+            intercambio= false;
+
+            for (let i= 0; i < n-1; i++){
+                if (numerosIniciales[i]>numerosIniciales[i+1]){
+                    let guardar = numerosIniciales[i];
+                    numerosIniciales[i] = numerosIniciales[i+1];
+                    numerosIniciales[i+1]= guardar;
+
+                    intercambio= true;
+                }
+            }
+            --n;
+
+        } while (intercambio);
+        return numerosIniciales;
+    }  
+    
+   
+
+        
+ </script>
+    
+</body>
+</html>
