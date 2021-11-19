@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Serie Fibonacci - Por Erika Yohanna Echeverri Herrera
+       
+        let numeroDeElementos= 10 //Ingrese la cantidad de números, el número ingresado debe ser entero y mayor que cero
+        if (Number.isInteger(numeroDeElementos) && numeroDeElementos>0){
+            let arrayFibonacci=
+            serieFibonacci(numeroDeElementos);
+            mostrarArray(arrayFibonacci)
+        }else
+                console.log ("El número no es entero o mayor que cero")            
+           
+        function serieFibonacci(numeroDeElementos){
+           let fibonacci = [0,1];
+            if(numeroDeElementos<=1){
+                return fibonacci;
+            }
+            for (let i=2; i<=numeroDeElementos; i++) {
+                fibonacci[i]=fibonacci[i-1] + fibonacci[i-2];
+            }
+            return fibonacci;           
+        }
+
+        function mostrarArray(array){
+            for (let i=0; i<array.length; i++){
+                console.log (array[i])
+            }
+        }
+    
+    </script>
+</body>
+</html>

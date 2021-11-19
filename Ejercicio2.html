@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      // Método de la burbuja - Ordenar de forma ascendente
+
+    let numerosIniciales = ["Unacadena", 3, 9, 1, 10, 500, 1, 10, true] //Ingresar el valor del arreglo
+    
+    console.log("Se ha ingresado: " + numerosIniciales);
+  
+    let numero = numerosIniciales.filter(item=> typeof item==='number');
+    let numerosOrdenados = ordenar(numero);
+    console.log("Este es el orden de forma ascendente: " + numerosOrdenados);
+    console.log("La longitud del arreglo final es: "+numerosOrdenados.length);         
+
+    function ordenar (numerosIniciales) {
+        let n = numerosIniciales.length;
+        let intercambio;
+
+        do {
+            intercambio= false;
+
+            for (let i= 0; i < n-1; i++){
+                if (numerosIniciales[i]>numerosIniciales[i+1]){
+                    let guardar = numerosIniciales[i];
+                    numerosIniciales[i] = numerosIniciales[i+1];
+                    numerosIniciales[i+1]= guardar;
+
+                    intercambio= true;
+                }
+            }
+            --n;
+
+        } while (intercambio);
+        return numerosIniciales;
+    }   
+    </script>
+</body>
+</html>
