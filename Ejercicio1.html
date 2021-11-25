@@ -23,7 +23,7 @@
             if(numeroDeElementos<=1){
                 return fibonacci;
             }
-            for (let i=2; i<=numeroDeElementos; i++) {
+            for (let i=2; i<=numeroDeElementos-1; i++) {
                 fibonacci[i]=fibonacci[i-1] + fibonacci[i-2];
             }
             return fibonacci;           

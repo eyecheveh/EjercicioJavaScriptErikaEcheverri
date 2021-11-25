@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Examen practico por Erika Yohanna Echeverri Herrera
+
+        Punto 1*/
+        var numero1 = 5;
+        var numero2 = 8;
+        console.log ("El número1 es: " + numero1 + " El número2 es: " + numero2)
+        if(numero1 < numero2) {            
+            console.log("numero1 no es mayor que numero2");
+        }
+        if(numero2 > 0) {
+            console.log("numero2 es positivo");
+        }
+        if(numero1 < 0 || numero1 > 0) {
+            console.log("numero1 es negativo o distinto de cero");
+        }
+        if(numero1 + 1 < numero2) {
+            console.log("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que numero2");
+        }
+
+
+        /*Punto 2*/
+        let numero = 5; // Escribir el número a calcularle el factorial
+        let r = 1;
+        for (let i=1; i<=numero; i++){
+            r *= i;
+        }
+        console.log(r)
+
+
+        /*Punto 3*/
+        let numero = 8 //Ingresar el número
+        let resultado = parImpar (numero)
+        console.log("El número " + numero + " es " + resultado)
+
+        function parImpar (numero) {
+            if (numero % 2 == 0){
+                return "par";
+            } else {
+                return "impar"
+            }
+        }
+
+
+
+        /*Punto 4*/
+        let p = "reconocer" // Ingrese la palabra
+        function esPalindromo(palabra){
+        return palabra.split('').reverse().join('')==palabra;
+        }
+
+        console.log(esPalindromo(p))
+
+
+
+
+        /*Punto 5*/
+
+       class Persona{
+            nombre;
+            edad;
+            constructor (nombre, edad){
+                this.nombre = nombre;
+                this.edad = edad;
+        }
+        
+        obtDetalles(nombre, edad){
+            return               
+                    console.log("Su nombre es: " + nombre +" y su edad es: "+ edad);
+                          
+            }
+        }
+        class Estudiante extends Persona {
+            calificacion;
+            constructor (nombre, edad){
+                super (nombre, edad)
+        }
+        obtDetalles(nombre, edad, calificacion){
+            return
+                   console.log("Su nombre es: " + nombre +" y su edad es: "+ edad + " Su calificación es: " + calificacion);
+               
+            }
+        }
+        class Profesor extends Persona {
+            asignatura;
+            nivel;
+            constructor (nombre, edad){
+                super (nombre, edad)
+                this.asignatura= 'JS';
+                this.nivel = 'basico';
+        }
+        obtDetalles(nombre, edad, asignatura, nivel){
+            return
+                    console.log("Su nombre es: " + nombre +" y su edad es: "+ edad + " Su asignatura es: " + asignatura + " Su nivel es: " + nivel);
+               
+            }             
+
+        }
+        class Grupo extends Estudiante{
+            profesorPromedio;
+                    constructor (profesorPromedio){
+                this.profesorPromedio = profesorPromedio;
+                    }          
+            }
+            obtDetalles(nombre, edad, calificacion){
+            return
+                   console.log("Su nombre es: " + nombre +" y su edad es: "+ edad + " Su calificación es: " + calificacion);
+               
+            }
+            function calificar(calificacion) {
+
+                this.calificacion = Math.random() * 10;
+        }
+
+        var Persona1 = new Persona('Juan', '19');
+        Persona1.obtDetalles('Juan','19');
+
+        var Estudiante1 = new Estudiante('Pedro', '20', '5');
+
+        let estudiantes = [];
+        
+
+        
+
+        /*Bonus*/
+        function combinacionesPalabras(palabra) {
+            return palabra.reduce((n, m) => n.concat(n.map(j => [m].concat(j))), [[]]).reverse();
+        }
+            try {
+            console.log(combinacionesPalabras(["a","s","a","c"]));
+            }catch (e) {
+            console.log(`Fallo: ${e.message}`);
+        }
+        
+    </script>
+</body>
+</html>

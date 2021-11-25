@@ -21,7 +21,7 @@
             if(cuantos<=1){
                 return fibonacci;
             }
-            for (let i=2; i<=cuantos; i++) {
+            for (let i=2; i<=cuantos-1; i++) {
                 fibonacci[i]=fibonacci[i-1] + fibonacci[i-2];
             }
             return fibonacci;           
